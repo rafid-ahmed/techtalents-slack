@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/datastore": "^2.0.0",
     "eventbrite": "^1.2.1",
     "@slack/web-api": "^5.0.1"
   }
