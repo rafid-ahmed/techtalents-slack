@@ -18,8 +18,8 @@ const GCLOUD_PROJECT = 'tt-ekg';
 const clientSecretJson = JSON.parse(fs.readFileSync('./client_secret.json'));
 
 const oauth2Client = new google.auth.OAuth2(
-  clientSecretJson.installed.client_id,
-  clientSecretJson.installed.client_secret,
+  clientSecretJson.web.client_id,
+  clientSecretJson.web.client_secret,
   `https://${GCF_REGION}-${GCLOUD_PROJECT}.cloudfunctions.net/oauth2callback`
 );
 
