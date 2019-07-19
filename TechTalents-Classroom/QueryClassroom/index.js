@@ -329,6 +329,7 @@ function GetStudentDueCourseworks(req, course) {
       // PostMessage(req, msg);
       const courseWorks = result.data.courseWork;
       if (courseWorks && courseWorks.length) {
+        PostMessage(req, `Due coursework(s) in *${course.name}* course:`);
         courseWorks.forEach((courseWork) => {
           // GetSubmissions(req, msg, course, courseWork, workcount, courseWorks.length);
           classroom.courses.courseWork.studentSubmissions.list({
@@ -346,8 +347,13 @@ function GetStudentDueCourseworks(req, course) {
                   switch (studentSubmission.state) {
                     case "RECLAIMED_BY_STUDENT":
                     case "CREATED":
-                      const msg = `>*${courseWork.title}* has not been submitted. Submit it under ${course.name} course.`;
-                      PostMessage(req, msg);
+                      if(studentSubmission.associatedWithDeveloper) {
+                        msg = `*${courseWork.title}* has not been submitted\n><${courseWork.alternateLink}|To submit this coursework under ${course.name}, click here or simply start a thread and attach your file>`;
+                        PostMessage(req, msg);
+                      } else {
+                        msg = `*${courseWork.title}* has not been submitted\n><${courseWork.alternateLink}|To submit this coursework under ${course.name}, click here>`;
+                        PostMessage(req, msg);
+                      }
                       break;
                     default:
                       break;

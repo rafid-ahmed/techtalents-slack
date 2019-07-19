@@ -77,8 +77,8 @@ exports.uploadCoursework = (req, res) => {
                     console.log(result);
                     if (result.ok === true) {
                       const text = result.messages[0].text;
-                      var filename = req.body.event.files[0].name;
-                      var fileurl = req.body.event.files[0].url_private;
+                      const filename = req.body.event.files[0].name;
+                      const fileurl = "https://us-central1-tt-ekg.cloudfunctions.net/getSlackFile?path=" + req.body.event.files[0].url_private_download.substr("https://files.slack.com".length);
                       GetCourseList(req, text, filename, fileurl);
                     } else {
                       PostMessage(req, `Parent text could not be found! :confused:`);
