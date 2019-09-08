@@ -1,0 +1,15 @@
+{
+  "name": "eventbrite-event",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/datastore": "^2.0.0",
+    "eventbrite": "^1.2.1"
+  }
+}
