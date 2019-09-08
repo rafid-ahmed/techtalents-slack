@@ -348,10 +348,10 @@ function GetStudentDueCourseworks(req, course) {
                     case "RECLAIMED_BY_STUDENT":
                     case "CREATED":
                       if(studentSubmission.associatedWithDeveloper) {
-                        msg = `*${courseWork.title}* has not been submitted\n><${courseWork.alternateLink}|To submit this coursework under ${course.name}, click here or simply start a thread and attach your file>`;
+                        const msg = `*${courseWork.title}* has not been submitted\n><${courseWork.alternateLink}|To submit this coursework under ${course.name}, click here or simply start a thread and attach your file>`;
                         PostMessage(req, msg);
                       } else {
-                        msg = `*${courseWork.title}* has not been submitted\n><${courseWork.alternateLink}|To submit this coursework under ${course.name}, click here>`;
+                        const msg = `*${courseWork.title}* has not been submitted\n><${courseWork.alternateLink}|To submit this coursework under ${course.name}, click here>`;
                         PostMessage(req, msg);
                       }
                       break;

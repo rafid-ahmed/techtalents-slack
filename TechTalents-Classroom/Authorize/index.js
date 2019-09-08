@@ -97,7 +97,7 @@ function SendLink(req) {
     state: JSON.stringify({ userid: req.body.user_id }),
   });
 
-  const msg = `<${authUrl}|Request an *authorization token* by clicking here>\n>Please choose your @edu.unternehmertum.de account`;
+  const msg = `<${authUrl}|Request an *authorization token* by clicking here>\n>Please choose your *@edu.unternehmertum.de* account`;
   PostMessage(req, msg);
 }
 
