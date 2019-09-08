@@ -36,7 +36,6 @@ exports.oauth2callback = (req, res) => {
   // Get authorization code from request
   const code = req.query.code; 
   const state = JSON.parse(req.query.state);
-
   return new Promise((resolve, reject) => {
     // OAuth2: Exchange authorization code for access token
     oauth2Client.getToken(code, (err, token) => {

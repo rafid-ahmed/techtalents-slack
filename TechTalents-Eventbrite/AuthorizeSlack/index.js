@@ -14,7 +14,7 @@ exports.authorizeSlack = (req, res) => {
   }
   
   request({
-    url: `https://slack.com/api/oauth.access?client_id=675050136674.697250372228&client_secret=${process.env.SLACK_CLIENT_SECRET}&code=${req.query.code}&state=${req.query.state}`,
+    url: `https://slack.com/api/oauth.access?client_id=11011399734.693055913046&client_secret=${process.env.SLACK_CLIENT_SECRET}&code=${req.query.code}&state=${req.query.state}`,
     json: true
   }, (err, response, registration) => {
     if (err) {
